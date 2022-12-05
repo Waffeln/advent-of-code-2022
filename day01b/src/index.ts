@@ -9,7 +9,7 @@ readFile("./src/assets/input.txt", "utf-8", (err: any, data: string)=>{
 	const mostCaloriesArray = Array(numberOfTopCalories).fill(0);
 	let currentElfCalories = 0
 
-	caloriesPerElfArray.map((el: string)=>{
+	caloriesPerElfArray.map((el: string) => {
 		if(!el) {
 			currentElfCalories = 0
 			return;
