@@ -18,8 +18,8 @@ readFile('./src/assets/input.txt', 'utf-8', (err: any, data: string) => {
         return undefined
       }
       for (let x = 0; (x * 4 + 1) < el.length - 1; x++) {
-        // TODO: find less hardcody to see if there is a crate in Stack x |[N]     [F] [M]     [D] [V] [R] [N]|
-        //                                                                | 1   2   3   4   5   6   7   8   9 |
+        // TODO: find less hardcody way, to see if there is a crate in Stack x |[N]     [F] [M]     [D] [V] [R] [N]|
+        //                                                                     | 1   2   3   4   5   6   7   8   9 |
         if (idx === 0) crateStackArray.push([])
         if (el[(x * 4) + 1] !== ' ') crateStackArray[x].unshift(el[x * 4 + 1])
       }
