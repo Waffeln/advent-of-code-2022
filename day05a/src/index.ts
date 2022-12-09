@@ -34,7 +34,6 @@ readFile('./src/assets/input.txt', 'utf-8', (err: any, data: string) => {
       for (let x = fromStackLength; x > (fromStackLength - Number(commandRow[0])); x--) {
         crateStackArray[toStack].push(crateStackArray[fromStack][x])
         crateStackArray[fromStack].pop()
-        if (x < 0) return
       }
     }
   })
