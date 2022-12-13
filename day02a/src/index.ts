@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { readFile } from 'fs'
 
 // A/X: Rock, B/Y: Paper, C/Z: Scissors
@@ -23,17 +22,16 @@ const matchOptions: any = {
   }
 }
 
-readFile('./src/assets/input.txt', 'utf-8', (err: any, data: string) => {
-  if (err) {
+readFile('./day02a/src/assets/input.txt', 'utf-8', (err: any, data: string) => {
+  if (err !== null) {
     console.error(err)
   }
   const matchRoundsArray = data.split('\n')
   let playerScore: number = 0
 
-  // eslint-disable-next-line array-callback-return
-  matchRoundsArray.map((el: string): void => {
+  matchRoundsArray.forEach((el: string): void => {
     const playerChoice: string[] = el.split(' ')
-    if (!playerChoice[0]) return undefined
+    if (playerChoice[0] === '') return undefined
     console.log(playerChoice)
     playerScore += Number(matchOptions[playerChoice[1]].choicePoints) + Number(matchOptions[playerChoice[1]][playerChoice[0]])
   })

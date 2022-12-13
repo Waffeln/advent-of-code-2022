@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { readFile } from 'fs'
 
-readFile('./src/assets/input.txt', 'utf-8', (err: any, data: string) => {
-  if (err) {
+readFile('./day03a/src/assets/input.txt', 'utf-8', (err: any, data: string) => {
+  if (err !== null) {
     console.error(err)
   }
   // charCodeAt - xCharDifference = priority
@@ -12,7 +11,7 @@ readFile('./src/assets/input.txt', 'utf-8', (err: any, data: string) => {
   let priorityScore: number = 0
 
   rucksackArray.forEach((el: string): void => {
-    if (!el) return undefined
+    if (el === '') return undefined
     const alreadyCheckedArray: string[] = []
     const containerArray: string[][] = [el.substring(0, el.length / 2).split(''), el.substring(el.length / 2).split('')]
     containerArray[1].forEach((el2: string) => {

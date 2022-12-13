@@ -1,6 +1,6 @@
 import { readFile } from 'fs'
 
-readFile('./src/assets/input.txt', 'utf-8', (err: any, data: string) => {
+readFile('./day05a/src/assets/input.txt', 'utf-8', (err: any, data: string) => {
   if (err !== null) {
     console.error(err)
   }
