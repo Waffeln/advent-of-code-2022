@@ -20,15 +20,15 @@ const createTreeMap = (data: string): number[][] => {
 
 const countVisibleTreesInGrid = (treeMap: number[][]): number => {
   let visibleTrees: number = 0
-  treeMap.forEach((elX, idxX) => {
-    elX.forEach((elY, idxY) => {
+  treeMap.forEach((elY, idxY) => {
+    elY.forEach((elX, idxX) => {
       if (checkIsVisible(treeMap, idxX, idxY))visibleTrees++
     })
   })
   return visibleTrees
 }
 
-const checkIsVisible = (treeMap: number[][], xIndex: number, yIndex: number): boolean => {
+const checkIsVisible = (treeMap: number[][], yIndex: number, xIndex: number): boolean => {
   if (xIndex === 0 || yIndex === 0 || xIndex === treeMap.length - 1 || yIndex === treeMap[0].length - 1) return true
   const directions: directionType = {
     left: [],
